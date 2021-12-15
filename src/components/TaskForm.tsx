@@ -3,17 +3,17 @@ import React, { useState } from "react";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import { ITask } from "./DayList";
 
-
 export default function TaskForm(props: ITask) {
-
   const [task, setTask] = useState<ITask>({
     id: "",
     name: "",
-    checked: false
+    checked: false,
+    task: {},
+    addTask: () => {},
   });
 
   function handleTaskInputChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setTask({...task, name: e.target.value})
+    setTask({ ...task, name: e.target.value });
   }
 
   return (

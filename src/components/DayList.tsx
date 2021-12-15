@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Day from "./Day";
 import { v4 as uuidv4 } from "uuid";
 
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/swiper.min.css";
@@ -47,9 +46,11 @@ export interface IDay {
 }
 
 export interface ITask {
-  id: string;
-  name: string;
-  checked: boolean;
+  id?: string;
+  name?: string;
+  checked?: boolean;
+  task?: any;
+  addTask(): void;
 }
 
 const LOCAL_STORAGE_KEY = "power-list-tasks";
@@ -59,7 +60,7 @@ export default function DayList() {
 
   useEffect(() => {
     const storageDaysJson = localStorage.getItem(LOCAL_STORAGE_KEY);
-    let storageDays: IDay[] = [];  
+    let storageDays: IDay[] = [];
     if (storageDaysJson) {
       storageDays = JSON.parse(storageDaysJson);
     }

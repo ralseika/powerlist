@@ -5,12 +5,12 @@ import TaskList from "./TaskList";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: "20px"
+    padding: "20px",
   },
 }));
 
-function addTask () {
-  return;
+function addTask() {
+  console.log("aaa");
 }
 
 export default function Day() {
@@ -18,7 +18,7 @@ export default function Day() {
   return (
     <Paper className={classes.root}>
       <div className="date"></div>
-      <TaskForm addTask={addTask} task={{id: "", name:"", checked: false}}/>
+      <TaskForm addTask={addTask} task={{ id: "", name: "", checked: false }} />
       <TaskList />
     </Paper>
   );
